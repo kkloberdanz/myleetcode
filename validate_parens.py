@@ -2,13 +2,10 @@
 
 import sys
 
+
 def validate(stmt):
     toks = []
-    openers = {
-        '(': ')',
-        '[': ']',
-        '{': '}'
-    }
+    openers = {"(": ")", "[": "]", "{": "}"}
     closers = set(openers.values())
     for c in stmt:
         if c in openers:
@@ -32,7 +29,7 @@ def validate(stmt):
     return True
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     for paren in sys.argv[1:]:
         if validate(paren):
             print(paren, "VALID")

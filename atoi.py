@@ -6,15 +6,15 @@ import sys
 
 def _atoi(s: str) -> int:
     as_int = 0
-    zero_value = ord('0')
+    zero_value = ord("0")
     s = s.strip()
-    if s[:2] == '+-' or s[:2] == '-+':
+    if s[:2] == "+-" or s[:2] == "-+":
         return 0
 
-    if s[0] == '-':
+    if s[0] == "-":
         sign = -1
         s = s[1:]
-    elif s[0] == '+':
+    elif s[0] == "+":
         sign = 1
         s = s[1:]
     else:
@@ -22,12 +22,12 @@ def _atoi(s: str) -> int:
 
     tens_place = 0
     INT_MAX = 2**31 - 1
-    INT_MIN = -2**31
+    INT_MIN = -(2**31)
     for c in s[::-1]:
-        if c == '.':
+        if c == ".":
             as_int = 0
             tens_place = 0
-        elif ord(c) >= ord('0') and ord(c) <= ord('9'):
+        elif ord(c) >= ord("0") and ord(c) <= ord("9"):
             as_int += (ord(c) - zero_value) * 10**tens_place
             if sign * as_int > INT_MAX:
                 return INT_MAX
@@ -46,6 +46,7 @@ def atoi(s: str) -> int:
     else:
         return 0
 
-if __name__ == '__main__':
+
+if __name__ == "__main__":
     for num in sys.argv[1:]:
         print(atoi(num))
