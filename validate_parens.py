@@ -5,7 +5,11 @@ import sys
 
 def validate(stmt):
     toks = []
-    openers = {"(": ")", "[": "]", "{": "}"}
+    openers = {
+        "(": ")",
+        "[": "]",
+        "{": "}",
+    }
     closers = set(openers.values())
     for c in stmt:
         if c in openers:
