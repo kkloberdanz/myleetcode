@@ -9,6 +9,7 @@ class Node:
     def __repr__(self):
         return str(self.data)
 
+
 class LinkedList:
     def __init__(self):
         self.head = None
